@@ -1,10 +1,10 @@
 package com.example.yanji_oblig1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,15 +16,23 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun clickHandler() {
-        val palindromButton = findViewById<Button>(R.id.palindromButton);
-        val userInput = findViewById<TextView>(R.id.userInput);
+        val palindromButton = findViewById<Button>(R.id.palindromButton)
+        val userInput = findViewById<TextView>(R.id.userInput)
         val answer = findViewById<TextView>(R.id.answer)
+        val nextPage = findViewById<Button>(R.id.nextPageButton)
 
         palindromButton.setOnClickListener {
             val input = userInput.text.toString()
             val isPal = isPalindrome(input)
-            if (isPal) answer.setText("Your name is a palindrome") else answer.setText("Your name is NOT a palindrome")
+            if (input.trim().length>0) if (isPal ) answer.setText(getString(R.string.answerYes)) else answer.setText(getString(
+                            R.string.answerNo))
 
+
+        }
+        nextPage.setOnClickListener {
+            var intent = Intent(this, ConverterActivity::class.java)
+            startActivity (intent)
+            userInput.setText("")
         }
     }
     private  fun isPalindrome(input:String): Boolean{

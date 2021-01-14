@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Yanji_oblig1</string>
+    <string name="next_activity">Next Activity</string>
+    <string name="enter_name">Enter Name:</string>
+    <string name="check_palindrome">Check Palindrome</string>
+    <string name="page2">Page2</string>
+    <string name="finish">Finish</string>
+    <string name="page3">page3</string>
+    <string name="answerNo">Your name is NOT a palindrome</string>
+    <string name="answerYes">Your name is a palindrome</string>
+    <string name="convert">Convert</string>
+    <string name="fo">fluid ounce (fl oz)</string>
+    <string name="cup">cup (cp)</string>
+    <string name="gal">gallon (gal)</string>
+    <string name="hog">hogshead</string>
+    <string name="alertmessage">Please enter number first</string>
 </resources>
