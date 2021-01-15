@@ -16,7 +16,7 @@ class ConverterActivity : AppCompatActivity() {
     }
 
     public fun  next(button: android.view.View){
-        var intent = Intent(this, QuizActivity::class.java)
+        val intent = Intent(this, QuizActivity::class.java)
         startActivity(intent)
         val userInput2 = findViewById<TextView>(R.id.userInput2)
         val answer2 = findViewById<TextView>(R.id.answer2)
@@ -28,7 +28,7 @@ class ConverterActivity : AppCompatActivity() {
         val userInput2 = findViewById<TextView>(R.id.userInput2)
         val answer2 = findViewById<TextView>(R.id.answer2)
         val spinner = findViewById<Spinner>(R.id.spinner)
-        var spinnerOption= arrayOf<String>(getString(R.string.fo),
+        val spinnerOption= arrayOf<String>(getString(R.string.fo),
             getString(R.string.cup),
             getString(
                 R.string.gal),
@@ -54,24 +54,26 @@ class ConverterActivity : AppCompatActivity() {
         convertButton.setOnClickListener {
             val inputManager: InputMethodManager =
                 getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-
             inputManager.hideSoftInputFromWindow(currentFocus!!.windowToken,
                 InputMethodManager.HIDE_NOT_ALWAYS)
+
             if (userInput2.text.toString().trim().isEmpty()) {
-                answer2.setText(getString(R.string.alertmessage))}
+                Toast.makeText(this,R.string.alertmessage, Toast.LENGTH_LONG).show()
+             }
             else {
                 val num = userInput2.text.toString().toFloat()
-                var result = when (optionSelected) {
+                val result = when (optionSelected) {
                     getString(R.string.fo) -> num * 0.02957
                     getString(R.string.cup) -> num * 0.23659
                     getString(R.string.gal) -> num * 3.78541
                     getString(R.string.hog) -> num * 238.481
                     else -> 0.00
                 }
-                answer2.setText(result.toString())
+                answer2.setText("%.2f".format(result).toString()+ getString(R.string.l))
             }
         }
 
 
     }
+
 }

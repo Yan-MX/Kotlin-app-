@@ -14,4 +14,7 @@
     <string name="gal">gallon (gal)</string>
     <string name="hog">hogshead</string>
     <string name="alertmessage">Please enter number first</string>
+    <string name="l">L</string>
+    <string name="truebutton">True</string>
+    <string name="falseButton">False</string>
 </resources>
