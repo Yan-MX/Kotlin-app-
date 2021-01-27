@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             val isPal = isPalindrome(input)
             if (input.trim().length>0) if (isPal ) answer.setText(getString(R.string.answerYes)) else answer.setText(getString(
                             R.string.answerNo))
-
+            userInput.setText("")
 
         }
         nextPage.setOnClickListener {

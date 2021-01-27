@@ -71,6 +71,7 @@ class ConverterActivity : AppCompatActivity() {
                 }
                 answer2.setText("%.2f".format(result).toString()+ getString(R.string.l))
             }
+            userInput2.setText("")
         }
 
 
